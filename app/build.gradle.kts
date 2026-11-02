@@ -18,7 +18,7 @@ plugins {
     kotlin("android")
     kotlin("plugin.serialization")
     kotlin("plugin.compose")
-    id("dagger.hilt.android.plugin")
+    id("com.google.dagger.hilt.android")
     id("com.google.devtools.ksp")
 }
 
@@ -58,7 +58,7 @@ android {
         targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_17.toString()
+        jvmTarget = "17"
     }
     buildFeatures {
         compose = true
@@ -78,16 +78,16 @@ composeCompiler {
 }
 dependencies {
 
-    implementation("androidx.core:core-ktx:1.15.0")
-    implementation("androidx.compose.ui:ui:1.7.6")
-    implementation("androidx.compose.material:material:1.7.6")
-    implementation("androidx.compose.ui:ui-tooling-preview:1.7.6")
-    implementation("androidx.activity:activity-compose:1.9.3")
+    implementation("androidx.core:core-ktx:1.16.0")
+    implementation("androidx.compose.ui:ui:1.8.1")
+    implementation("androidx.compose.material:material:1.8.1")
+    implementation("androidx.compose.ui:ui-tooling-preview:1.8.1")
+    implementation("androidx.activity:activity-compose:1.10.1")
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.2.1")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.6.1")
-    androidTestImplementation("androidx.compose.ui:ui-test-junit4:1.7.6")
-    debugImplementation("androidx.compose.ui:ui-tooling:1.7.6")
+    androidTestImplementation("androidx.compose.ui:ui-test-junit4:1.8.1")
+    debugImplementation("androidx.compose.ui:ui-tooling:1.8.1")
 
     // retrofit
     implementation("com.squareup.retrofit2:retrofit:2.11.0")
@@ -96,18 +96,18 @@ dependencies {
     implementation("com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.14")
 
     // view model
-    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.7")
-    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.8.7")
-    implementation("androidx.lifecycle:lifecycle-runtime-compose:2.8.7")
-    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.8.7")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.9.0")
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.9.0")
+    implementation("androidx.lifecycle:lifecycle-runtime-compose:2.9.0")
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.9.0")
 
-    //coroutines
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.0")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.10.0")
+    // coroutines
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.2")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.10.2")
 
     // dagger hilt
-    implementation("com.google.dagger:hilt-android:2.54")
-    ksp("com.google.dagger:hilt-android-compiler:2.54")
+    implementation("com.google.dagger:hilt-android:2.56.2")
+    ksp("com.google.dagger:hilt-android-compiler:2.56.2")
     ksp("androidx.hilt:hilt-compiler:1.2.0")
     implementation("androidx.hilt:hilt-navigation-compose:1.2.0")
     // coil
@@ -117,30 +117,31 @@ dependencies {
     implementation("com.google.firebase:firebase-messaging:24.1.0")
 
     // room
-    implementation("androidx.room:room-runtime:2.6.1")
-    ksp("androidx.room:room-compiler:2.6.1")
-    implementation("androidx.room:room-ktx:2.6.1")
+    implementation("androidx.room:room-runtime:2.7.1")
+    ksp("androidx.room:room-compiler:2.7.1")
+    implementation("androidx.room:room-ktx:2.7.1")
 
     // compose icons
-    implementation("androidx.compose.material:material-icons-extended:1.7.6")
+    implementation("androidx.compose.material:material-icons-extended:1.7.8")
 
     // datastore (core and preferences)
-    implementation("androidx.datastore:datastore:1.1.1")
-    implementation("androidx.datastore:datastore-preferences:1.1.1")
+    implementation("androidx.datastore:datastore:1.1.7")
+    implementation("androidx.datastore:datastore-preferences:1.1.7")
 
 
     implementation("org.jetbrains.kotlinx:kotlinx-collections-immutable:0.3.5")
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.7.3")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.8.1")
 
     //splashscreen
     implementation("androidx.core:core-splashscreen:1.0.1")
 
-    //paging 3
-    implementation("androidx.paging:paging-runtime-ktx:3.3.5")
-    implementation("androidx.paging:paging-compose:3.3.5")
+    // paging 3
+    implementation("androidx.paging:paging-runtime-ktx:3.3.6")
+    implementation("androidx.paging:paging-compose:3.3.6")
     implementation("androidx.profileinstaller:profileinstaller:1.4.1")
 
-    implementation("androidx.work:work-runtime-ktx:2.10.0")
+    //work
+    implementation("androidx.work:work-runtime-ktx:2.10.1")
     implementation("androidx.hilt:hilt-work:1.2.0")
     implementation("androidx.hilt:hilt-common:1.2.0")
 
